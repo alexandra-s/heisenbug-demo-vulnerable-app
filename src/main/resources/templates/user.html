@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body>
+
+
+    <div class="user-info">
+        <h1 th:inline="text" th:text="${user.name}"></h1>
+        <h3><span th:inline="text" th:text="${#lists.size(user.follows)}"></span>  following</h3>
+        <h3><span th:inline="text" th:text="${#lists.size(user.followedBy)}"></span>  followers</h3>
+    </div>
+
+
+    <div class="feed-image-cnt" th:each="photo : ${user.photos}">
+        <a th:href="@{/photo(id=${photo.id})}">
+            <div class="feed-image" th:style="'background-image:url(' + ${photo.url} + ');'"></div>
+        </a>
+    </div>
+
+
+</body>
+</html>

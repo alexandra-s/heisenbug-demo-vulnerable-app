@@ -1,0 +1,44 @@
+h1{
+    color:#0000FF;
+}
+
+h2{
+    color:#FF0000;
+}
+
+footer{
+    margin-top:60px;
+}
+
+.feed-image-cnt {
+    width: 400px;
+    padding-left: 150px;
+
+}
+
+.feed-image {
+    width: 400px;
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+
+.user-info {
+    width: 300px;
+    position: relative;
+    top: 0px;
+    float: right;
+}
+
+.comments {
+    width: 450px;
+    position: relative;
+    top: 0px;
+    float: right;
+}
+
+.photo {
+    height: 600px;
+}

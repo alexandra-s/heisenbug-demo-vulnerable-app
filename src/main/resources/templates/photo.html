@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body>
+
+
+<div class="container">
+
+    <div class="comments">
+        <h2>
+            <span th:text="${photo.title}" />
+            by
+            <a th:inline="text" th:href="@{/user(id=${user.id})}"><span th:text="${user.name}"></span></a>
+        </h2>
+        <div th:each="comment : ${photo.comments}">
+            <h3 th:text="${comment.author.name}"></h3>
+            <!--XSS VULNERABILITY HERE-->b
+            <p th:utext="${comment.text}"></p>
+        </div>
+    </div>
+
+
+
+    <img class="photo" th:src="${photo.url}" />
+
+
+</div>
+
+</body>
+</html>
